@@ -16,7 +16,7 @@ public class Principal {
 		//persona.nombre = "Yann"; //Se puede ver que marca error porque el Default solo tiene alcance dentro de su  paquete
 		
 		//persona.edad = 21; También marca error porque sólo puede ser accedida desde su clase.
-		
+		//persona.domicilio = "CDMX"; Marca error porque es protegido y este no está en el mismo paquete
 	}
 
 }
