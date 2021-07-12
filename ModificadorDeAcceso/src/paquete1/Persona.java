@@ -10,6 +10,8 @@ public class Persona {
 	 * y pueden acceder desde clase que heredan de ella*/
 	protected String domicilio="";
 	
+	public float estatura = 0;
+	
 	String saludar() {
 		return "Hola, mi nombre es " + this.nombre + "Mi edad es " + this.edad;
 	}
