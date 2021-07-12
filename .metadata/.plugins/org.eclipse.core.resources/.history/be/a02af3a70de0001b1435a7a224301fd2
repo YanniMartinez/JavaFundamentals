@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class EstructurasDeDatos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		/*Acceso posicional a elementos: manipula elementos en función de su posición en la lista.
+		Búsqueda de elementos: busca un elemento concreto de la lista y devuelve su posición.
+		Rango de operación: permite realizar ciertas operaciones sobre ragos de elementos dentro de la propia lista.
+		implementaciones:
+		ArrayList
+		
+		*
+		*/
+		List<String> frutas2 = new ArrayList<String>();
+		frutas2.add("");	
+		frutas2.add("Manzana");
+		frutas2.add("Durazno");
+		frutas2.add("Pera");
+		frutas2.add("Cereza");
+		frutas2.add("Mandarina");
+		frutas2.add("Carambola");
+		frutas2.add("Maracuya");
+		frutas2.add("Platano");
+		frutas2.add("Mango");
+		
+		for (String f : frutas2) {
+			System.out.println(f);
+		}
+		int pera = frutas2.indexOf("Pera"); //Obtenemos el indice
+		System.out.println(pera); //Imprimimos el indice
+		System.out.println(frutas2.get(pera)); //Obtiene el contenido de ese indice
+	}
+
+}

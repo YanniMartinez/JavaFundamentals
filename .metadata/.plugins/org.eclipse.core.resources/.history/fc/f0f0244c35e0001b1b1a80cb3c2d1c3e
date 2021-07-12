@@ -1,0 +1,28 @@
+
+public class CuentaBancaria {
+	String beneficiario;
+	float saldo;
+	long cuenta;
+	String producto;
+	String dirección;
+	String RFC;
+	
+	public void depositos() {
+		
+	}
+	
+	public void retiros() {
+		
+	}
+	
+	public float consultarSaldo() {
+		
+		return 1.1f;
+	}
+	
+	public String estadoDeCuenta() {
+		
+		return "";
+	}
+	
+}

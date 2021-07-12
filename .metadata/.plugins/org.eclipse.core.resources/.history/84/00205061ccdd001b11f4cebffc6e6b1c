@@ -1,0 +1,54 @@
+import java.util.Scanner;
+public class CiclosJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingresa el primer número: ");
+		int num1= teclado.nextInt();
+		
+		//tabla(num1);
+		numeroParImpar(num1);
+	}
+	
+	/**
+	 * Crear un metodo que reciba por parametro un número y nos muestre la 
+	 * tabla de multiplicar de ese número
+	 * Ejemplo:
+	 * 1 X 1 = 1
+	 * 1 X 2 = 2
+	 * 1 X 3 = 3
+	 * ...
+	 * 1 X 10 = 10
+
+	 * */
+	public static void tabla(int numero) {
+		System.out.println("La tabla de multiplicar de "+numero+ " es: ");
+		for(int i = 0; i<10; i++) {
+			System.out.println(numero+" x "+(i+1)+" = "+(numero*(i+1)));
+		}
+	}
+	
+	/*Hacer un programa que pida un número por teclado
+	 * Se tiene que hacer un recorrido desde 1 hasta el numero introducido
+	 * Tiene que imprimir la suma de los numeros pares e imparres*/
+	public static void numeroParImpar(int numero) {
+		int par=0;
+		int impar=0;
+		for(int i=0; i<numero;i++) {
+			if(i%2==0) {
+				par += i;
+				
+			}
+			else {
+				impar += i;
+			}
+		}
+		System.out.println(par);
+		System.out.println(impar);
+	}
+	/*10
+	 * 2+4+6+8 = 20
+	 * 1+3+5+7+9 = 25
+	 * */
+}
