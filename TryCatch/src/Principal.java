@@ -1,7 +1,7 @@
 /*MANEJO DE EXCEPCIONES*/
 public class Principal {
 	static int numerador = 10;
-	static Integer denominador = null;
+	static Integer denominador = 0;
 	static float division;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,8 +15,10 @@ public class Principal {
 			division = 0;
 			System.out.println("Error: "+ex.getMessage());
 			System.out.println("Segundo Catch");
+		}finally { //Siempre se ejecuta, entre o no entre a los catch.
+			System.out.println("Despues de la división");
 		}
-		System.out.println("Despues de la división");
+		
 	}
 	
 
