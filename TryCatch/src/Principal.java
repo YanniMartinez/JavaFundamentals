@@ -4,8 +4,8 @@ public class Principal {
 	static Integer denominador = 0;
 	static float division;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Antes de la division");
+		// Excepciones:
+		/*System.out.println("Antes de la division");
 		try { //INTENTA
 			division = numerador / denominador;
 		}catch(ArithmeticException error) { //Si ocurre un error ejecuta lo siguiente:
@@ -17,6 +17,13 @@ public class Principal {
 			System.out.println("Segundo Catch");
 		}finally { //Siempre se ejecuta, entre o no entre a los catch.
 			System.out.println("Despues de la división");
+		}*/
+		
+		
+		/*Iteración de elementos semejante al forEach*/
+		String frutas[] = {"Mango","Pera","Manzana","Uva"};
+		for (String fruta: frutas) {
+			System.out.println(fruta);
 		}
 		
 	}
