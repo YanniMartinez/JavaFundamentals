@@ -7,6 +7,13 @@ public abstract class Animal {
 	int patas;
 	int edad;
 	
+	/*Uso de constructores para inicializar objetos, este constructor también se hereda en los hijos
+	 * que están heredando de la clase abstracta*/
+	public Animal(String nombre, int edad) {
+		this.nombre = nombre;
+		this.edad = edad;
+	}
+	
 	/*Método Abstracto, será forzoso usarlo cuando heredemos*/
 	public abstract String comer();
 	
