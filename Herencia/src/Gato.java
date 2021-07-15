@@ -1,5 +1,5 @@
 /*Aquí la clase hereda de la clase abstracta, sólo podemos heredar, no crear objetos.*/
-public class Gato extends Animal{
+public class Gato extends Animal implements Mascota{
 	int numBigotes;
 	String color;
 	int vidasDisponibles = 9;
@@ -15,6 +15,25 @@ public class Gato extends Animal{
 	@Override
 	public String comer() {
 		return "Comiendo atún ";
+	}
+
+	/****************** Implementando métodos de interfaz mascota ****************************/
+	@Override
+	public String trucos() {
+		// TODO Auto-generated method stub
+		return "Caer de pie";
+	}
+
+	@Override
+	public String premios() {
+		// TODO Auto-generated method stub
+		return "Bola de estambre";
+	}
+
+	@Override
+	public String jugar() {
+		// TODO Auto-generated method stub
+		return "Jugar con el laser";
 	}
 	
 	/*@Override

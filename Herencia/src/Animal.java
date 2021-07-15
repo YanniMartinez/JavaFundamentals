@@ -24,4 +24,13 @@ public abstract class Animal {
 	
 	//Obliga a los hijos a usar estos métodos abstractos
 }
-/*Las clases abstractas No se pueden instanciar*/
+/*Las clases abstractas No se pueden instanciar
+ * 
+ * REFERENCIAS:
+ * Clases abstractas: https://www.abrirllave.com/java/clases-abstractas.php
+
+Interfaces: https://codigofacilito.com/articulos/clases-abstractas-interfaces-java
+http://puntocomnoesunlenguaje.blogspot.com/2013/09/java-interfaces.html(editado)
+
+ * */
+ */
