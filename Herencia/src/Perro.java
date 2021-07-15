@@ -8,4 +8,9 @@ public class Perro extends Animal{ //Hace referencia a que hereda de animal
 	public String ladrar() {
 		return "Guau Guau";
 	}
+	
+	@Override
+	public String comer() {
+		return "Comiendo croquetas";
+	}
 }
