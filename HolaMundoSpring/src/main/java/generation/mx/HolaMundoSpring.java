@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-//Con REST controller le decmos a java que esa aplicación intereactua con el servidor.
+//Con REST controller le decmos a java que esa aplicación intereactua con el servidor. Todo lo que va con @ se llama
+//anotaciones y le indica a Java que es lo que usaremos
 @RestController
 public class HolaMundoSpring {
 	
@@ -16,6 +17,8 @@ public class HolaMundoSpring {
 	*/
 	@RequestMapping (path = "/", method = RequestMethod.GET)
 	public String holaMundo(@RequestParam(name = "nombre", defaultValue = "defecto") String nombre) {
+		/*name = "nombre", nombre es el nombre del parametro que recibirá, por ejemplo ?nombre, si pusieramos 
+		 * name="apellido" sería ?apellido*/
 		return "Hola" + nombre;
 	}
 	//En URL mandamos el parametro y sería de la siguiente manera: localhost:808?nombre=Yann
