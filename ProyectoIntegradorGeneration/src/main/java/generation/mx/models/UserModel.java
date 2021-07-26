@@ -22,8 +22,17 @@ public class UserModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (nullable = false)
 	private long id;
+	
+	//Le inficamos que no puede ser nulo, que tenga una longitud de 100 y que su nombre sea name
+	@Column (nullable = false, length = 100, name = "name")
 	private String name;
+	
+	//Le inficamos que no puede ser nulo, que tenga una longitud de 100 
+	@Column (nullable = false, length = 100)
 	private String surname;
+	
+	//Le inficamos que no puede ser nulo, que tenga una longitud de 100 y que sea un valor unico
+	@Column (nullable = false, length = 100, unique = true)
 	private String email;
 	
 	/*Get --> Devuelve
