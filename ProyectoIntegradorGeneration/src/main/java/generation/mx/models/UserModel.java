@@ -1,6 +1,10 @@
 package generation.mx.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /*Será el nuevo modelo para una tabla. para ello debemos decir que es una entidad para la base de datos.
@@ -9,6 +13,14 @@ import javax.persistence.Table;
 @Table(name="users")
 public class UserModel {
 
+	/*
+	 * @Id Le indicamos que será el id y que le generará el Id. 
+	 * @Generated --> Hará asignación automática con la estrategia identity. Es semejante al PK y Autoincremento
+	 * @Column --> Indica que el valor de la columna no puede ser nulo.
+	 * */
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (nullable = false)
 	private long id;
 	private String name;
 	private String surname;
