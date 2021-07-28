@@ -26,7 +26,6 @@ public class PostModel {
 	@ManyToOne
 	private UserModel user;
 	
-	
 
 	public long getId() {
 		return id;
