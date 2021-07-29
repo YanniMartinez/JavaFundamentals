@@ -35,4 +35,19 @@ public class PostService {
 	public Optional<PostModel> findPostByID(Long id) {
 		return postRepository.findById(id);
 	}
+	
+	/*Usando el método del reposity
+	 * Permite obtener 1 o más elementos en esta consulta
+	 * Este debe ser usado en el controlador ahora*/
+	public ArrayList<PostModel> getPostsByTitle(String title) {
+		return postRepository.findByTitleContaining(title);
+	}
+	
+	/*Usando el método del reposity
+	 * Permite obtener 1 o más elementos en esta consulta
+	 * en base al titulo y los ordenará de forma descendiente
+	 * Este debe ser usado en el controlador ahora*/
+	public ArrayList<PostModel> getByTitleContainingOrderByIdDesc(String title){
+		return postRepository.findByTitleContainingOrderByIdDesc(title);
+	}
 }

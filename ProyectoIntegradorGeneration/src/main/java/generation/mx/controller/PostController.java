@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -53,6 +54,24 @@ public class PostController {
 		return postService.findPostByID(id);
 	}
 	
+	/*Implementando el método papa buscar por titulo.
+	 * Es muy importante poner el GetMapping("/query") para hacer una consulta
+	 * En PostMan iría: localhost:8080/post/query?title=LoQueBuscamos
+	 * Ejemplo: localhost:8080/post/query?title=Noticia */
+	@GetMapping("/query")
+	public ArrayList<PostModel> getPostsByTitle(@RequestParam(value = "title", defaultValue = "") String title){
+		return postService.getPostsByTitle(title);
+	}
+	
+	/*Implementando el método papa buscar por titulo.
+	 * Es muy importante poner el GetMapping("/q") para que no choque con lo anterior
+	 * En PostMan iría: localhost:8080/post/q Esto buscará todos los titulos y lo ordenará de forma descendiente por id
+	 * Otro es Ejemplo: localhost:8080/post/q?title=noti -->	traerá todos los que contengan noti en su titulo*/
+	@GetMapping("/q")
+	public ArrayList<PostModel> getByTitleOrderById(@RequestParam(value = "title", defaultValue = "") String title) {
+		return postService.getByTitleContainingOrderByIdDesc(title);
+	}
+
 }
 
 
