@@ -34,3 +34,30 @@ public class PostController {
 		return postService.savePost(post);
 	}
 }
+
+
+/*Notas al modificar un Post
+ * 
+ * 
+ * Forma INCORRECTA de asignar un id.
+ {
+    "id" : 1,
+    "title": "Noticias CDMX",
+    "content": "Aprendiendo como guardar post",
+    "user": 1
+}
+ * 
+ * 
+ * Forma CORRECTA de asignar un id.
+ {
+    "id" : 1,
+    "title": "Noticias CDMX",
+    "content": "Aprendiendo como guardar post",
+    "user": {
+        "id":1
+    }
+	
+ }
+ * 
+ * 
+ * */
