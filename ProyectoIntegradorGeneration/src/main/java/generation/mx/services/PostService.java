@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import generation.mx.models.PostModel;
 import generation.mx.repositories.PostRepository;
-
+/*NOTA: Todo lo que se hará con la BD se debe hacer mediante el repositorio*/
 @Service
 public class PostService {
 	

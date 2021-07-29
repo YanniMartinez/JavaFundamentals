@@ -43,7 +43,12 @@ public class UserModel {
 	private String email;
 	
 	//Como pueden ser muchas publicaciones entonces lo ponemos como list
-	@OneToMany( targetEntity = PostModel.class )
+	/*El nombre que va en mappedBy es "user" hace referencia al atributo que se pone en PostModel
+	 * Lo usamos para decirle que la relación es bidrireccional, es decir que user se puede conectar con Post y viceversa
+	 * Si no lo ponemos es como si hiciera una relacion muchos a muchos
+	 * Es Explicito y es bueno dejarlo así para que no genere relaciones de más.
+	 * */
+	@OneToMany( targetEntity = PostModel.class, mappedBy = "user")
 	private List<PostModel> posts;
 
 	/*Get --> Devuelve
