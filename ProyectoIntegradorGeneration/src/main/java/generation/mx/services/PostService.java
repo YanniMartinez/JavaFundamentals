@@ -1,9 +1,11 @@
 package generation.mx.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import generation.mx.models.PostModel;
 import generation.mx.repositories.PostRepository;
@@ -24,5 +26,13 @@ public class PostService {
 	public PostModel savePost(PostModel post) {
 		//Guardará en la base de datos
 		return postRepository.save(post);
+	}
+	
+	/*
+	 * Método por busqueda por ID.
+	 * Como puede o no devolver es necesario ponerlo como opcional.
+	 * */
+	public Optional<PostModel> findPostByID(Long id) {
+		return postRepository.findById(id);
 	}
 }

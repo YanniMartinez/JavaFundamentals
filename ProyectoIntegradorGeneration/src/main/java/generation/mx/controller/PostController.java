@@ -1,15 +1,26 @@
 package generation.mx.controller;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import generation.mx.models.PostModel;
+import generation.mx.models.UserModel;
+import generation.mx.repositories.PostRepository;
 import generation.mx.services.PostService;
 
 /*Sirve para indicarle que interactuará con toda la parte del HTML*/
@@ -33,6 +44,15 @@ public class PostController {
 	public PostModel savePost( @RequestBody PostModel post) {
 		return postService.savePost(post);
 	}
+	
+	/*Obtendrá el post por Id, recordemos que aquí se concatenará la cadena entonces sería alco como
+	 *   localhost:8080/post/id   
+	 *   Así se vería en PostMan para consultar localhost:8080/post/1  */
+	@GetMapping(path="/{id}")
+	public Optional<PostModel> getPostById(@PathVariable("id") Long id){
+		return postService.findPostByID(id);
+	}
+	
 }
 
 
@@ -59,5 +79,16 @@ public class PostController {
 	
  }
  * 
+ * Para evitar este ciclo ponermos en: USER MODEL:
  * 
+@OneToMany( targetEntity = PostModel.class, mappedBy = "user")
+@JsonManagedReference  //Le decimos que el user manejará la referencia
+private List<PostModel> posts;
+
+
+y en POSTMODEL:
+	@ManyToOne
+	@JsonBackReference //Retorna la referencia, o la hace inversa
+	
+	private UserModel user;
  * */

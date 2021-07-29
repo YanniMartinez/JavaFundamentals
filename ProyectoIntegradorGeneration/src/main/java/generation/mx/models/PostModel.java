@@ -27,6 +27,7 @@ public class PostModel {
 	
 	@ManyToOne
 	@JsonBackReference //Retorna la referencia, o la hace inversa
+	
 	private UserModel user;
 	/*De esta manera cuando consultemos el post sólo muestra los datos del post*/
 
