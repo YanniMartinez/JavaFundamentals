@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="posts")
 public class PostModel {
@@ -24,8 +26,9 @@ public class PostModel {
 	private String content;
 	
 	@ManyToOne
+	@JsonBackReference //Retorna la referencia, o la hace inversa
 	private UserModel user;
-	
+	/*De esta manera cuando consultemos el post sólo muestra los datos del post*/
 
 	public long getId() {
 		return id;

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 
 /*JPA: Java persistence Access. Hace las conversiones correspondientes con SQL*/
@@ -49,7 +51,9 @@ public class UserModel {
 	 * Es Explicito y es bueno dejarlo así para que no genere relaciones de más.
 	 * */
 	@OneToMany( targetEntity = PostModel.class, mappedBy = "user")
+	@JsonManagedReference  //Le decimos que el user manejará la referencia
 	private List<PostModel> posts;
+	/*Esto quiere decir que nos mostrará las publicaciones que hizo el usuario.*/
 
 	/*Get --> Devuelve
 	 *Set --> Establece dato*/
