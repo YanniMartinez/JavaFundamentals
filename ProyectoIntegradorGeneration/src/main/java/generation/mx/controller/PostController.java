@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +25,12 @@ public class PostController {
 	@GetMapping
 	public ArrayList<PostModel> getPosts() {
 		return postService.getPosts();
+	}
+	
+	/*request body hace referencia a los datos que viajan a través del body, este contenido
+	 * lo meterá en una variable de tipo PostModel que se llame post*/
+	@PostMapping
+	public PostModel savePost( @RequestBody PostModel post) {
+		return postService.savePost(post);
 	}
 }

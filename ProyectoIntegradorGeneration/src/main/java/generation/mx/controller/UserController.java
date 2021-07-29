@@ -64,7 +64,7 @@ public class UserController {
 	 * obtendremos parametros por la url, un parametro llamado name y una parametro por defecto.
 	 * Este valor lo almacenaremos en una variable String llamada name
 	 * 
-	 * Atravez de la url obtenemos un parametro y atraves de ese parametro haremos una busqueda
+	 * Atraves de la url obtenemos un parametro y atraves de ese parametro haremos una busqueda
 	 * GetMapping intercepta todas las consultas que se harán por GET*/
 	@GetMapping("/query")
 	public ArrayList<UserModel> getUsersByName(@RequestParam(value = "name", defaultValue = "") String name){
