@@ -44,8 +44,9 @@ public class UserModel {
 	@Column (nullable = false, length = 100, unique = true)
 	private String email;
 	
-	/*Campo que servirá para la contraseña*/
-	@Column (nullable = false, length = 100)
+	/*Campo que servirá para la contraseña
+	 * Para verificar que se instaló la dependencia dice "Using generated security password: ********" */
+	@Column (nullable = false, length = 100) 
 	private String password;
 	
 	//Como pueden ser muchas publicaciones entonces lo ponemos como list

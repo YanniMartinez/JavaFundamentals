@@ -7927,3 +7927,21 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:15:35.953
 !MESSAGE executing callback sts4.classpath.zruObTMB SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-07-30 17:18:25.596
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:18:45.123
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:18:45.339
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:18:45.402
+!MESSAGE buffering callback sts4.classpath.zruObTMB ProyectoIntegradorGeneration false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:18:45.407
+!MESSAGE executing callback sts4.classpath.zruObTMB 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-30 17:18:45.661
+!MESSAGE executing callback sts4.classpath.zruObTMB SUCCESS [done]
