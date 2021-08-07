@@ -17,12 +17,13 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import static com.autentia.demo.jwt.security.Constants.HEADER_AUTHORIZACION_KEY;
+
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-	protected static final String HEADER_AUTHORIZACION_KEY = null;
 	private UserDetailsService userDetailsService;
 
 	public WebSecurity(UserDetailsService userDetailsService) {
@@ -92,6 +93,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
+				/*addMapping(/**) Le decimos que son todas las rutas
+				 * allowedOrigins("*") permite las peticiones por todos lados
+				 * */
 				registry.addMapping("/**").allowedOrigins("*")
 				.exposedHeaders(HEADER_AUTHORIZACION_KEY);
 				//Aqui configuramos que headers sean visibles:

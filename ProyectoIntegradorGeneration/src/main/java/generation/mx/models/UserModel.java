@@ -60,6 +60,9 @@ public class UserModel {
 	private List<PostModel> posts;
 	/*Esto quiere decir que nos mostrará las publicaciones que hizo el usuario.*/
 
+	/*El agregar esta dependencia protege nuestra app*/
+	
+	
 	/*Get --> Devuelve
 	 *Set --> Establece dato*/
 	//ID
@@ -95,15 +98,25 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public List getPosts() {
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<PostModel> getPosts() {
 		return posts;
 	}
 
-	public void setPosts(List posts) {
+	public void setPosts(List<PostModel> posts) {
 		this.posts = posts;
 	}
-	
 
+	
+	
+	
 	
 	
 }

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 
 @RestController
 public class UsuarioController {
@@ -38,4 +40,18 @@ public class UsuarioController {
 	public Usuario getUsuario(@PathVariable String username) {
 		return usuarioRepository.findByUsername(username);
 	}
+	
+	/*Recupera el usuario y que usuario, Sólo nos devolvió un username*/
+	@GetMapping("/user/auth")
+	public Usuario getAuthUser() {
+		/*Para conocer el usuario que está realizando la petición y para no tener que mandarlo desde el body o algo así
+		 * el API lo puede buscar de forma automática.
+		 * Security recupera el nombre de usuario. Lanza una petición y este devuelve los datos del usuario mediante el token
+		 * Todos los tokens son diferentes*
+		 * 
+		 * Al generar la petición automáticamente devuelve valores del usuario*/
+		return usuarioRepository.findByUsername((String) (SecurityContextHolder.getContext().getAuthentication().getPrincipal()));
+
+	}
+
 }
