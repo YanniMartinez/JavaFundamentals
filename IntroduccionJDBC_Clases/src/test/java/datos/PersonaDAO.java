@@ -11,6 +11,7 @@ public class PersonaDAO {
 	private static final String SQL_SELECT="SELECT id_persona, nombre, apellido, email, telefono FROM persona";
 	private static final String SQL_INSERT="INSERT INTO persona(nombre, apellido, email, telefono) values(?,?,?,?)";
 	private static final String SQL_UPDATE="UPDATE persona SET nombre=', apellido=?, email=?, telefono=? WHERE id_persona=?";
+	private static final String SQL_DELETE="DELETE FROM persona WHERE id_persona=?";
 	
 	/*Regresa lista de objetos tipo persona*/
 	public List<Persona> seleccionar(){
@@ -62,12 +63,11 @@ public class PersonaDAO {
 		int registros = 0;
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(SQL_UPDATE);
+			stmt = conn.prepareStatement(SQL_INSERT);
 			stmt.setString(1, persona.getNombre()); //Se manda el nombre en la pos1
 			stmt.setString(2, persona.getApellido());
 			stmt.setString(3, persona.getEmail());
 			stmt.setString(4, persona.getTelefono());
-			stmt.setInt(5,persona.getIdPersona());
 			
 			registros = stmt.executeUpdate(); //Modifica estado de la BD
 			
@@ -99,6 +99,35 @@ public class PersonaDAO {
 			stmt.setString(2, persona.getApellido());
 			stmt.setString(3, persona.getEmail());
 			stmt.setString(4, persona.getTelefono());
+			stmt.setInt(5,persona.getIdPersona());
+			
+			registros = stmt.executeUpdate(); //Modifica estado de la BD
+			
+		} catch (SQLException e) {
+			e.printStackTrace(System.out);
+		}finally {
+			try {
+				Conexion.close(stmt);
+				Conexion.close(conn);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace(System.out);
+			}
+			
+		}
+		
+		return registros;
+	}
+	
+	
+	public int eliminar(Persona persona) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		int registros = 0;
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(SQL_DELETE);
+			stmt.setInt(1,persona.getIdPersona());
 			
 			registros = stmt.executeUpdate(); //Modifica estado de la BD
 			

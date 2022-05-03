@@ -18,6 +18,9 @@ public class TestManejoPersonas {
 		Persona personaModificar = new Persona(4, "Juan Carlos", "Esparza","jcesparza@mail.com","554455667788");
 		personaDAO.actualizar(personaModificar);
 		
+		//Eliminando un registro en base al ID
+		Persona personaEliminar = new Persona(4);
+		personaDAO.eliminar(personaEliminar);
 		
 		for(Persona persona: personas) { //Forma de recorrer arreglo en base a la lista
 			System.out.println("Persona: " + persona);
