@@ -14,6 +14,11 @@ public class TestManejoPersonas {
 		Persona personaNueva = new Persona("Yanni", "Martinez", "tester@mail.com","550123456789");
 		personaDAO.insertar(personaNueva);
 		
+		//Modificando registro de persona existente:
+		Persona personaModificar = new Persona(4, "Juan Carlos", "Esparza","jcesparza@mail.com","554455667788");
+		personaDAO.actualizar(personaModificar);
+		
+		
 		for(Persona persona: personas) { //Forma de recorrer arreglo en base a la lista
 			System.out.println("Persona: " + persona);
 		}
