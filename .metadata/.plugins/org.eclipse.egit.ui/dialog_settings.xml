@@ -30,4 +30,7 @@
 			<item value="400"/>
 		</list>
 	</section>
+	<section name="GitCommitSearchPage">
+		<item key="HISTORY_SIZE" value="0"/>
+	</section>
 </section>
