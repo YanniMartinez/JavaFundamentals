@@ -30,7 +30,7 @@ public class Conexion {
 	
 	//Si este método genera una excepcion la propaga al getconecction
 	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+		return getDataSource().getConnection(); //Solicita objeto del pool de conexiones
 	}
 	
 	public static void close(ResultSet rs) throws SQLException {
